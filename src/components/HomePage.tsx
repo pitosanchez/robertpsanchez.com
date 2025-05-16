@@ -382,12 +382,16 @@ const HomePage = () => {
             className="flex flex-col items-center mb-8 sm:mb-12"
             ref={carouselRef}
           >
-            <div className="relative w-full max-w-xl h-64 sm:h-72 md:h-96 overflow-hidden rounded-2xl sm:rounded-3xl shadow-xl sm:shadow-2xl bg-[#E9E9ED] flex items-center justify-center">
+            <div className="relative w-full max-w-xl h-80 sm:h-96 md:h-[32rem] overflow-hidden rounded-2xl sm:rounded-3xl shadow-xl sm:shadow-2xl bg-[#E9E9ED] flex items-center justify-center">
               <img
                 src={`/${aboutCarouselImages[carouselIndex]}`}
                 alt="About carousel"
                 className="about-carousel-image w-full h-full object-contain rounded-2xl sm:rounded-3xl transition-opacity duration-700 z-10"
-                style={{ boxShadow: "0 8px 32px 0 rgba(45, 111, 171, 0.25)" }}
+                style={{
+                  boxShadow: "0 8px 32px 0 rgba(45, 111, 171, 0.25)",
+                  objectPosition: "center center",
+                  padding: "1rem",
+                }}
               />
               {/* Carousel controls */}
               <button
@@ -475,21 +479,25 @@ const HomePage = () => {
                   title: "Deepening Advocacy Partnerships",
                   description:
                     "Strengthening alliances with health-equity and rare-disease organizations to close resource gaps.",
+                  icon: "🤝",
                 },
                 {
                   title: "Geo-Targeted Community Engagement",
                   description:
                     "Crafting bilingual materials and outreach tactics that resonate locally and foster lasting trust.",
+                  icon: "🌍",
                 },
                 {
                   title: "Cross-Functional Collaboration",
                   description:
                     "Bridging clinical teams, social workers, pharmacists, and educators—while upholding strict compliance standards.",
+                  icon: "👥",
                 },
                 {
                   title: "Data-Driven Impact Measurement",
                   description:
                     "Embedding KPIs into every initiative to track progress and refine strategies in real time.",
+                  icon: "📊",
                 },
               ].map((card, idx) => (
                 <div
@@ -498,19 +506,72 @@ const HomePage = () => {
                     if (!window._advocacyCards) window._advocacyCards = [];
                     window._advocacyCards[idx] = el;
                   }}
-                  className="bg-[#91B8DC] text-white rounded-2xl p-6 sm:p-8 flex flex-col items-start min-h-[180px] transition-transform shadow-2xl"
-                  style={{
-                    boxShadow:
-                      "0 8px 32px 0 rgba(45, 111, 171, 0.35), 0 2px 8px 0 rgba(0,0,0,0.10)",
-                    border: "1.5px solid #2D6FAB",
-                  }}
+                  className="group h-[200px] sm:h-[250px] [perspective:1000px]"
                 >
-                  <h3 className="text-lg sm:text-xl font-bold mb-3 font-cinzel">
-                    {card.title}
-                  </h3>
-                  <p className="text-base font-medium leading-relaxed">
-                    {card.description}
-                  </p>
+                  <div className="relative w-full h-full transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+                    {/* Front of card (Side A) */}
+                    <div
+                      className="absolute w-full h-full rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center text-center [backface-visibility:hidden]"
+                      style={{
+                        background: "linear-gradient(165deg, #91B8DC, #7BA3C9)",
+                        boxShadow: `
+                          0 20px 40px -10px rgba(45, 111, 171, 0.4),
+                          0 0 0 1px rgba(45, 111, 171, 0.1),
+                          0 0 0 2px rgba(45, 111, 171, 0.05),
+                          0 0 0 3px rgba(45, 111, 171, 0.025),
+                          inset 0 2px 4px rgba(255, 255, 255, 0.1)
+                        `,
+                        border: "1px solid rgba(45, 111, 171, 0.2)",
+                        backdropFilter: "blur(10px)",
+                      }}
+                    >
+                      <div
+                        className="text-4xl mb-4"
+                        style={{
+                          textShadow: "2px 2px 4px rgba(0, 0, 0, 0.2)",
+                        }}
+                      >
+                        {card.icon}
+                      </div>
+                      <h3
+                        className="text-lg sm:text-xl font-bold font-cinzel text-white"
+                        style={{
+                          textShadow: "1px 1px 2px rgba(0, 0, 0, 0.1)",
+                        }}
+                      >
+                        {card.title}
+                      </h3>
+                      <div className="absolute bottom-4 text-sm text-white/80">
+                        Hover to learn more
+                      </div>
+                    </div>
+
+                    {/* Back of card (Side B) */}
+                    <div
+                      className="absolute w-full h-full rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center text-center [backface-visibility:hidden] [transform:rotateY(180deg)]"
+                      style={{
+                        background: "linear-gradient(165deg, #7BA3C9, #91B8DC)",
+                        boxShadow: `
+                          0 20px 40px -10px rgba(45, 111, 171, 0.4),
+                          0 0 0 1px rgba(45, 111, 171, 0.1),
+                          0 0 0 2px rgba(45, 111, 171, 0.05),
+                          0 0 0 3px rgba(45, 111, 171, 0.025),
+                          inset 0 2px 4px rgba(255, 255, 255, 0.1)
+                        `,
+                        border: "1px solid rgba(45, 111, 171, 0.2)",
+                        backdropFilter: "blur(10px)",
+                      }}
+                    >
+                      <p
+                        className="text-base font-medium leading-relaxed text-white"
+                        style={{
+                          textShadow: "1px 1px 2px rgba(0, 0, 0, 0.1)",
+                        }}
+                      >
+                        {card.description}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
