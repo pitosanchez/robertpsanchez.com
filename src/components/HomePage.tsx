@@ -62,63 +62,77 @@ const HomePage = () => {
   }, []);
 
   useGSAP(() => {
-    // Hero section parallax
+    // Hero section parallax - adjusted for better mobile performance
     gsap.to(".hero-content", {
-      yPercent: 30,
+      yPercent: window.innerWidth < 768 ? 15 : 30, // Reduced parallax effect on mobile
       ease: "none",
       scrollTrigger: {
         trigger: "#home",
         start: "top top",
         end: "bottom top",
-        scrub: true,
+        scrub: window.innerWidth < 768 ? 0.5 : true, // Smoother scrub on mobile
+        invalidateOnRefresh: true, // Recalculate on resize
       },
     });
 
-    // Services cards stack animation
+    // Services cards stack animation - improved mobile timing
     cardsRef.current.forEach((card, index) => {
       if (card) {
         gsap.from(card, {
-          y: 100,
+          y: window.innerWidth < 768 ? 50 : 100, // Reduced movement on mobile
           opacity: 0,
-          duration: 1,
+          duration: window.innerWidth < 768 ? 0.8 : 1, // Faster animation on mobile
           scrollTrigger: {
             trigger: card,
-            start: "top bottom-=100",
+            start: "top bottom-=50", // Adjusted trigger point for mobile
             toggleActions: "play none none reverse",
+            invalidateOnRefresh: true,
           },
-          delay: index * 0.2,
+          delay: index * (window.innerWidth < 768 ? 0.1 : 0.2), // Faster sequence on mobile
         });
       }
     });
 
-    // Resume stack-cards animation
+    // Resume stack-cards animation - improved mobile timing
     resumeCardsRef.current.forEach((card, index) => {
       if (card) {
         gsap.from(card, {
-          y: 100,
+          y: window.innerWidth < 768 ? 50 : 100, // Reduced movement on mobile
           opacity: 0,
-          duration: 1,
+          duration: window.innerWidth < 768 ? 0.8 : 1, // Faster animation on mobile
           scrollTrigger: {
             trigger: card,
-            start: "top bottom-=100",
+            start: "top bottom-=50", // Adjusted trigger point for mobile
             toggleActions: "play none none reverse",
+            invalidateOnRefresh: true,
           },
-          delay: index * 0.2,
+          delay: index * (window.innerWidth < 768 ? 0.1 : 0.2), // Faster sequence on mobile
         });
       }
     });
 
-    // Advocacy section parallax
+    // Advocacy section parallax - adjusted for mobile
     gsap.to(".advocacy-bg", {
-      yPercent: -20,
+      yPercent: window.innerWidth < 768 ? -10 : -20, // Reduced parallax on mobile
       ease: "none",
       scrollTrigger: {
         trigger: "#advocacy",
         start: "top bottom",
         end: "bottom top",
-        scrub: true,
+        scrub: window.innerWidth < 768 ? 0.5 : true, // Smoother scrub on mobile
+        invalidateOnRefresh: true,
       },
     });
+  }, []);
+
+  // Add resize handler for GSAP updates
+  useEffect(() => {
+    const handleResize = () => {
+      ScrollTrigger.refresh();
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   useEffect(() => {
@@ -126,16 +140,17 @@ const HomePage = () => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         ".about-carousel-image",
-        { opacity: 0, x: 100 },
+        { opacity: 0, x: window.innerWidth < 768 ? 50 : 100 }, // Reduced movement on mobile
         {
           opacity: 1,
           x: 0,
-          duration: 0.8,
+          duration: window.innerWidth < 768 ? 0.6 : 0.8, // Faster animation on mobile
           ease: "power2.out",
           scrollTrigger: {
             trigger: carouselRef.current,
-            start: "top 80%",
+            start: "top 85%", // Adjusted trigger point for mobile
             toggleActions: "play none none reverse",
+            invalidateOnRefresh: true,
           },
         }
       );
@@ -313,13 +328,13 @@ const HomePage = () => {
         className="relative min-h-screen bg-gradient-to-r from-[#1a1a2e] to-[#16213e] text-white flex items-center justify-center overflow-hidden pt-20"
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/40" />
-        <div className="hero-content relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center md:items-stretch justify-center gap-12 text-center md:text-left font-display">
+        <div className="hero-content relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center md:items-stretch justify-center gap-8 md:gap-12 text-center md:text-left font-display">
           {/* Full-height image on the left with parallax effect */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 40 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="relative w-full md:w-1/2 h-[60vh] md:h-screen flex-shrink-0 flex items-center justify-center md:justify-start"
+            className="relative w-full md:w-1/2 h-[50vh] sm:h-[60vh] md:h-screen flex-shrink-0 flex items-center justify-center md:justify-start"
             style={{ boxShadow: "0 8px 32px 0 rgba(45, 111, 171, 0.25)" }}
           >
             {/* Dark gradient overlay for the image */}
@@ -337,18 +352,18 @@ const HomePage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex-1 flex flex-col justify-center items-center md:items-start"
+            className="flex-1 flex flex-col justify-center items-center md:items-start px-4 sm:px-0"
           >
-            <p className="text-xl sm:text-4xl uppercase tracking-widest font-light mb-4 sm:mb-6 font-cinzel">
+            <p className="text-lg sm:text-2xl md:text-4xl uppercase tracking-widest font-light mb-3 sm:mb-4 md:mb-6 font-cinzel">
               ROBERT A. SANCHEZ, MPS
             </p>
-            <h2 className="text-3xl sm:text-5xl md:text-7xl font-cinzel font-thin leading-tight mb-8 sm:mb-12 text-center md:text-left">
+            <h2 className="text-2xl sm:text-4xl md:text-7xl font-cinzel font-thin leading-tight mb-6 sm:mb-8 md:mb-12 text-center md:text-left">
               Patient Advocate & Clinical Social Interviewer
             </h2>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-[#2D6FAB] hover:bg-[#2D6FAB]/90 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-md text-base sm:text-lg transition-colors font-display"
+              className="bg-[#2D6FAB] hover:bg-[#2D6FAB]/90 text-white px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-md text-sm sm:text-base md:text-lg transition-colors font-display w-full sm:w-auto"
               onClick={() => scrollToSection("about")}
             >
               Start Your Journey
@@ -358,26 +373,29 @@ const HomePage = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="bg-white py-20 px-4 sm:px-8">
+      <section id="about" className="bg-white py-16 sm:py-20 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl sm:text-5xl font-cinzel font-extrabold text-[#2D6FAB] mb-12 text-center tracking-wide uppercase">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-cinzel font-extrabold text-[#2D6FAB] mb-8 sm:mb-12 text-center tracking-wide uppercase">
             About Me
           </h2>
-          <div className="flex flex-col items-center mb-12" ref={carouselRef}>
-            <div className="relative w-full max-w-xl h-72 sm:h-96 overflow-hidden rounded-3xl shadow-2xl bg-[#E9E9ED] flex items-center justify-center">
+          <div
+            className="flex flex-col items-center mb-8 sm:mb-12"
+            ref={carouselRef}
+          >
+            <div className="relative w-full max-w-xl h-64 sm:h-72 md:h-96 overflow-hidden rounded-2xl sm:rounded-3xl shadow-xl sm:shadow-2xl bg-[#E9E9ED] flex items-center justify-center">
               <img
                 src={`/${aboutCarouselImages[carouselIndex]}`}
                 alt="About carousel"
-                className="about-carousel-image w-full h-full object-contain rounded-3xl transition-opacity duration-700 z-10"
+                className="about-carousel-image w-full h-full object-contain rounded-2xl sm:rounded-3xl transition-opacity duration-700 z-10"
                 style={{ boxShadow: "0 8px 32px 0 rgba(45, 111, 171, 0.25)" }}
               />
               {/* Carousel controls */}
               <button
                 onClick={prevCarousel}
-                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-[#2D6FAB] rounded-full p-2 shadow-lg z-20"
+                className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-[#2D6FAB] rounded-full p-1.5 sm:p-2 shadow-lg z-20"
               >
                 <svg
-                  className="w-6 h-6"
+                  className="w-5 h-5 sm:w-6 sm:h-6"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -392,10 +410,10 @@ const HomePage = () => {
               </button>
               <button
                 onClick={nextCarousel}
-                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-[#2D6FAB] rounded-full p-2 shadow-lg z-20"
+                className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-[#2D6FAB] rounded-full p-1.5 sm:p-2 shadow-lg z-20"
               >
                 <svg
-                  className="w-6 h-6"
+                  className="w-5 h-5 sm:w-6 sm:h-6"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -409,12 +427,12 @@ const HomePage = () => {
                 </svg>
               </button>
             </div>
-            <div className="flex gap-2 mt-4">
+            <div className="flex gap-1.5 sm:gap-2 mt-3 sm:mt-4">
               {aboutCarouselImages.map((_, idx) => (
                 <button
                   key={idx}
                   onClick={() => setCarouselIndex(idx)}
-                  className={`w-3 h-3 rounded-full ${
+                  className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full ${
                     carouselIndex === idx ? "bg-[#2D6FAB]" : "bg-gray-300"
                   }`}
                 />
@@ -522,25 +540,25 @@ const HomePage = () => {
       {/* Services Section */}
       <section
         id="services"
-        className="bg-[#2D6FAB] text-white py-16 sm:py-24 px-2 sm:px-4"
+        className="bg-[#2D6FAB] text-white py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8"
       >
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-10 sm:mb-16"
+            className="text-center mb-8 sm:mb-10 md:mb-16"
           >
-            <h2 className="text-2xl sm:text-4xl font-display font-light mb-4 sm:mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-light mb-3 sm:mb-4 md:mb-6">
               My Services
             </h2>
-            <p className="text-base sm:text-lg max-w-3xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg max-w-3xl mx-auto">
               Empowering individuals and communities through comprehensive
               healthcare advocacy and education.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-12">
             {[
               {
                 title: "Patient Advocacy",
@@ -566,17 +584,21 @@ const HomePage = () => {
                 ref={(el) => {
                   cardsRef.current[index] = el;
                 }}
-                className="bg-white/10 backdrop-blur-sm rounded-xl p-8 hover:bg-white/20 transition-colors transform hover:-translate-y-2 duration-300"
+                className="bg-white/10 backdrop-blur-sm rounded-xl p-6 sm:p-8 hover:bg-white/20 transition-colors transform hover:-translate-y-2 duration-300"
               >
-                <div className="text-4xl mb-6">{service.icon}</div>
-                <h3 className="text-xl uppercase tracking-wide mb-4 font-light">
+                <div className="text-3xl sm:text-4xl mb-4 sm:mb-6">
+                  {service.icon}
+                </div>
+                <h3 className="text-lg sm:text-xl uppercase tracking-wide mb-3 sm:mb-4 font-light">
                   {service.title}
                 </h3>
-                <p className="mb-6 text-white/90">{service.description}</p>
+                <p className="mb-4 sm:mb-6 text-sm sm:text-base text-white/90">
+                  {service.description}
+                </p>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-white text-[#2D6FAB] hover:bg-white/90 px-6 py-2 rounded-md transition-colors"
+                  className="bg-white text-[#2D6FAB] hover:bg-white/90 px-4 sm:px-6 py-2 rounded-md transition-colors text-sm sm:text-base w-full sm:w-auto"
                 >
                   Learn More
                 </motion.button>
@@ -963,7 +985,7 @@ const HomePage = () => {
       {/* Advocacy Section */}
       <section
         id="advocacy"
-        className="bg-[#91B8DC] py-16 sm:py-24 px-2 sm:px-4 text-white relative overflow-hidden"
+        className="bg-[#91B8DC] py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 text-white relative overflow-hidden"
       >
         <div className="advocacy-bg absolute inset-0 bg-[#2D6FAB]/20" />
         <div className="relative max-w-7xl mx-auto text-center">
@@ -971,11 +993,12 @@ const HomePage = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            className="px-4 sm:px-6 md:px-8"
           >
-            <h3 className="text-2xl sm:text-4xl md:text-5xl font-display font-light mb-6 sm:mb-8">
+            <h3 className="text-2xl sm:text-3xl md:text-5xl font-display font-light mb-4 sm:mb-6 md:mb-8">
               Rehabilitation Through the Arts (RTA)
             </h3>
-            <p className="text-base sm:text-lg max-w-3xl mx-auto mb-8 sm:mb-12">
+            <p className="text-sm sm:text-base md:text-lg max-w-3xl mx-auto mb-6 sm:mb-8 md:mb-12">
               My work with RTA and the inspiration behind the movie{" "}
               <em>Sing Sing</em> underscores my commitment to transformative
               justice through creativity.
@@ -983,7 +1006,7 @@ const HomePage = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-[#2D6FAB] hover:bg-[#2D6FAB]/90 px-6 sm:px-8 py-3 sm:py-4 rounded-md transition-colors text-base sm:text-lg"
+              className="bg-[#2D6FAB] hover:bg-[#2D6FAB]/90 px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-md transition-colors text-sm sm:text-base md:text-lg w-full sm:w-auto max-w-xs mx-auto"
             >
               Learn More
             </motion.button>
