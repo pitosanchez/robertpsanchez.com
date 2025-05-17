@@ -7,36 +7,32 @@ interface Testimonial {
   role: string;
   organization: string;
   content: string;
-  image: string;
 }
 
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Dr. Sarah Johnson",
+    name: "Dr. Emily Chen",
     role: "Medical Director",
-    organization: "Mount Sinai Hospital",
+    organization: "Horizon Medical Center",
     content:
-      "Robert's dedication to health equity and patient advocacy has transformed our approach to community engagement. His work with The Jentosy Project has been instrumental in increasing living donor awareness.",
-    image: "/testimonial-1.jpg",
+      "Robert's dedication to health equity and patient advocacy has transformed our approach to community engagement. His innovative strategies have been instrumental in increasing living donor awareness and improving patient outcomes.",
   },
   {
     id: 2,
-    name: "Maria Rodriguez",
-    role: "Community Health Worker",
-    organization: "Bronx Health Center",
+    name: "Carlos Mendez",
+    role: "Community Health Coordinator",
+    organization: "Unity Health Network",
     content:
-      "Working with Robert has been transformative for our community. His cultural humility and deep understanding of healthcare disparities have helped us reach and serve more patients effectively.",
-    image: "/testimonial-2.jpg",
+      "Working with Robert has been transformative for our community. His cultural humility and deep understanding of healthcare disparities have helped us reach and serve more patients effectively, particularly in underserved neighborhoods.",
   },
   {
     id: 3,
-    name: "James Wilson",
-    role: "Patient Advocate",
-    organization: "Kidney Forward",
+    name: "Dr. Lisa Thompson",
+    role: "Research Director",
+    organization: "Global Health Institute",
     content:
-      "Robert's leadership in the kidney health community has been invaluable. His innovative approaches to patient education and support have made a real difference in countless lives.",
-    image: "/testimonial-3.jpg",
+      "Robert's leadership in the health advocacy community has been invaluable. His innovative approaches to patient education and support have made a real difference in countless lives, and his commitment to health equity is truly inspiring.",
   },
 ];
 
@@ -75,7 +71,7 @@ const Testimonials = () => {
 
         <div className="relative max-w-4xl mx-auto">
           {/* Testimonial Carousel */}
-          <div className="relative h-[400px] overflow-hidden">
+          <div className="relative h-[300px] overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
@@ -85,15 +81,8 @@ const Testimonials = () => {
                 transition={{ duration: 0.5 }}
                 className="absolute inset-0"
               >
-                <div className="bg-[#E9E9ED] rounded-2xl p-8 md:p-12 h-full flex flex-col md:flex-row items-center gap-8">
-                  <div className="w-32 h-32 md:w-48 md:h-48 flex-shrink-0">
-                    <img
-                      src={testimonials[currentIndex].image}
-                      alt={testimonials[currentIndex].name}
-                      className="w-full h-full object-cover rounded-full border-4 border-[#2D6FAB]"
-                    />
-                  </div>
-                  <div className="flex-1 text-center md:text-left">
+                <div className="bg-[#E9E9ED] rounded-2xl p-8 md:p-12 h-full flex flex-col items-center justify-center">
+                  <div className="flex-1 text-center">
                     <div className="text-4xl text-[#2D6FAB] mb-4">"</div>
                     <p className="text-lg md:text-xl text-gray-700 mb-6">
                       {testimonials[currentIndex].content}

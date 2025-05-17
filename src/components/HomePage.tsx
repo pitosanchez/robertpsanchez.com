@@ -254,7 +254,17 @@ const HomePage = () => {
               <img
                 src="/rs-logo.png"
                 alt="RS Logo"
-                className="h-16 w-16 sm:h-20 sm:w-20"
+                className={`h-16 w-16 sm:h-20 sm:w-20 transition-all duration-300 ${
+                  !isScrolled
+                    ? "drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] brightness-110 contrast-110"
+                    : "drop-shadow-[0_0_12px_rgba(255,255,255,0.6)] hover:drop-shadow-[0_0_16px_rgba(255,255,255,0.8)]"
+                }`}
+                style={{
+                  filter: !isScrolled
+                    ? "brightness(1.2) contrast(1.2)"
+                    : "brightness(1.1) contrast(1.1)",
+                  transform: "scale(1.05)",
+                }}
               />
             </motion.a>
 
@@ -675,37 +685,10 @@ const HomePage = () => {
       {/* Resume Highlight Section */}
       <section id="resume" className="bg-[#E9E9ED] py-16 sm:py-24 px-2 sm:px-4">
         <div className="max-w-3xl mx-auto">
-          <h3 className="text-2xl sm:text-4xl font-display mb-10 text-center">
+          <h3 className="text-3xl sm:text-4xl md:text-5xl font-cinzel font-extrabold text-[#2D6FAB] mb-8 sm:mb-12 text-center tracking-wide uppercase">
             Full Resume
           </h3>
-          <div className="flex justify-end mb-8">
-            <button
-              onClick={() => {
-                const link = document.createElement("a");
-                link.href = "/SanchezRobert.docx";
-                link.download = "SanchezRobert.docx";
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-              }}
-              className="flex items-center gap-2 bg-[#2D6FAB] text-white px-6 py-3 rounded-lg shadow-lg hover:bg-opacity-90 transition-all duration-300"
-            >
-              <svg
-                className="w-5 h-5 transition-transform duration-300"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                />
-              </svg>
-              Download Resume (Word)
-            </button>
-          </div>
+
           {/* Page 1 */}
           <div className="bg-white rounded-2xl shadow-xl p-8 text-gray-900 font-sans mb-12">
             <div className="text-center mb-6">
@@ -827,6 +810,7 @@ const HomePage = () => {
               </ul>
             </div>
           </div>
+
           {/* Page 2 */}
           <div className="bg-white rounded-2xl shadow-xl p-8 text-gray-900 font-sans mb-12">
             <div className="font-bold text-[#2D6FAB] text-lg mb-2">
@@ -954,6 +938,7 @@ const HomePage = () => {
               </ul>
             </div>
           </div>
+
           {/* Page 3 */}
           <div className="bg-white rounded-2xl shadow-xl p-8 text-gray-900 font-sans mb-12">
             <div className="font-bold text-[#2D6FAB] text-lg mb-2">
@@ -1039,6 +1024,62 @@ const HomePage = () => {
             <div className="font-bold text-[#2D6FAB] text-lg mb-2">
               LANGUAGES
             </div>
+          </div>
+
+          {/* Download Buttons - Centered */}
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8">
+            <button
+              onClick={() => {
+                const link = document.createElement("a");
+                link.href = "/documents/resume/SanchezRobertRES2025.docx";
+                link.download = "SanchezRobertRES2025.docx";
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
+              className="flex items-center gap-2 bg-[#2D6FAB] text-white px-6 py-3 rounded-lg shadow-lg hover:bg-opacity-90 transition-all duration-300"
+            >
+              <svg
+                className="w-5 h-5 transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                />
+              </svg>
+              Download Resume (Word)
+            </button>
+            <button
+              onClick={() => {
+                const link = document.createElement("a");
+                link.href = "/documents/resume/SanchezRobertRES2025.pdf";
+                link.download = "SanchezRobertRES2025.pdf";
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
+              className="flex items-center gap-2 bg-[#2D6FAB] text-white px-6 py-3 rounded-lg shadow-lg hover:bg-opacity-90 transition-all duration-300"
+            >
+              <svg
+                className="w-5 h-5 transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                />
+              </svg>
+              Download Resume (PDF)
+            </button>
           </div>
         </div>
       </section>
