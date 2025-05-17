@@ -201,9 +201,9 @@ const HomePage = () => {
 
   const navItems = [
     { id: "about", label: "About" },
-    { id: "experience", label: "Experience" },
-    { id: "advocacy", label: "Advocacy" },
+    { id: "mission", label: "Mission" },
     { id: "resume", label: "Resume" },
+    { id: "advocacy", label: "Interest" },
     { id: "contact", label: "Contact" },
   ];
 
@@ -385,7 +385,7 @@ const HomePage = () => {
       {/* About Section */}
       <section id="about" className="bg-white py-16 sm:py-20 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-cinzel font-extrabold text-[#2D6FAB] mb-8 sm:mb-12 text-center tracking-wide uppercase">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-cinzel font-light text-[#2D6FAB] mb-8 sm:mb-12 text-center tracking-wide uppercase">
             About Me
           </h2>
           <div
@@ -454,13 +454,13 @@ const HomePage = () => {
             </div>
           </div>
           <div
-            className="mx-auto text-gray-900 font-sans text-[1.18rem] sm:text-[1.25rem] leading-loose tracking-normal max-w-4xl"
+            className="mx-auto text-gray-900 font-sans text-lg sm:text-xl leading-relaxed tracking-normal max-w-4xl"
             style={{ letterSpacing: "0.01em" }}
           >
-            <p className="mb-8 font-semibold text-[#2D6FAB] text-2xl font-cinzel text-center tracking-wide leading-snug">
-              Mission-Driven Health Equity Advocate
+            <p className="mb-8 font-light text-[#2D6FAB] text-3xl font-cinzel text-center tracking-wide leading-snug">
+              Mission-Driven Kidney Health Advocate
             </p>
-            <p className="mb-7 font-medium">
+            <p className="mb-7">
               I'm driven by a singular mission: to expand living kidney donation
               and amplify the voices of underserved communities affected by rare
               kidney diseases like FSGS and IgAN. As Co-Founder of The Jentosy
@@ -472,7 +472,7 @@ const HomePage = () => {
               measurably increase donor registrations in Black and Brown
               neighborhoods.
             </p>
-            <p className="mb-7 font-medium">
+            <p className="mb-7">
               In my current role at Albert Einstein Medical College, I guide
               transplant candidates through every phase of evaluation—bringing
               together multidisciplinary teams, addressing social determinants
@@ -544,7 +544,7 @@ const HomePage = () => {
                         {card.icon}
                       </div>
                       <h3
-                        className="text-lg sm:text-xl font-bold font-cinzel text-white"
+                        className="text-xl font-light font-cinzel text-white"
                         style={{
                           textShadow: "1px 1px 2px rgba(0, 0, 0, 0.1)",
                         }}
@@ -573,7 +573,7 @@ const HomePage = () => {
                       }}
                     >
                       <p
-                        className="text-base font-medium leading-relaxed text-white"
+                        className="text-lg font-light leading-relaxed text-white"
                         style={{
                           textShadow: "1px 1px 2px rgba(0, 0, 0, 0.1)",
                         }}
@@ -586,14 +586,14 @@ const HomePage = () => {
               ))}
             </div>
             {/* End Advocacy Cards Grid */}
-            <p className="mb-7 font-medium">
+            <p className="mb-7">
               Earlier in my career, I co-founded Rehabilitation Through the Arts
               (RTA)—the theater program that inspired Sing Sing—where I learned
               how creative collaboration can dismantle barriers and spark
               transformation. That experience in cultural humility and
               resilience now underpins every advocacy campaign I lead.
             </p>
-            <p className="mb-0 font-medium">
+            <p className="mb-0">
               With a Bachelor's in Behavioral Science, an M.P.S. in Professional
               Studies, fluency in English and Spanish, and seven-plus years of
               grassroots and clinical advocacy, I'm prepared to drive
@@ -608,72 +608,100 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Services Section - Now Mission Section */}
       <section
-        id="services"
-        className="bg-[#2D6FAB] text-white py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8"
+        id="mission"
+        className="min-h-screen bg-gradient-to-br from-[#2D6FAB] to-[#1a4b7c] text-white py-16 sm:py-20 px-4 sm:px-8 relative overflow-hidden"
       >
-        <div className="max-w-7xl mx-auto">
+        {/* Subtle animated background */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#2D6FAB]/50 to-transparent" />
+        </div>
+
+        <div className="max-w-7xl mx-auto relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-8 sm:mb-10 md:mb-16"
+            className="text-center mb-12 sm:mb-16 md:mb-20"
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-light mb-3 sm:mb-4 md:mb-6">
-              My Services
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-cinzel font-light mb-8 sm:mb-12 text-center tracking-wide uppercase">
+              Mission
             </h2>
-            <p className="text-sm sm:text-base md:text-lg max-w-3xl mx-auto">
+            <p className="text-xl sm:text-2xl md:text-3xl max-w-3xl mx-auto leading-relaxed font-light">
               Empowering individuals and communities through comprehensive
               healthcare advocacy and education.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-12">
+          <div className="grid grid-cols-1 gap-16 max-w-5xl mx-auto">
             {[
               {
                 title: "Patient Advocacy",
-                description:
-                  "Guiding individuals through complex healthcare processes with personalized care and expert support.",
                 icon: "🏥",
+                description: `When I was first diagnosed with FSGS, I had no idea what those four letters would come to mean in my life. Focal Segmental Glomerulosclerosis is a rare kidney disease that causes scarring in parts of the kidneys' filtering units (glomeruli). Over time, that damage can lead to kidney failure. It disproportionately affects people of African, Caribbean, and Hispanic descent—and research suggests that genetics, environment, and social factors all play a role in who gets this disease and how it progresses.
+
+IgA Nephropathy is another rare kidney condition, sometimes called Berger's disease, which occurs when an antibody called immunoglobulin A builds up in the kidneys, causing inflammation. This inflammation can eventually impair kidney function, especially when left undiagnosed or untreated. Like FSGS, it's often invisible until it's advanced, and it's not widely understood in many communities of color.
+
+At the time of my diagnosis, I didn't know what questions to ask. I didn't see myself reflected in any of the materials. And I certainly didn't feel like anyone was speaking directly to people like me—Black, Puerto Rican, from the Bronx—trying to make sense of a condition I had never even heard of.
+
+That's why I became a patient advocate. Not because I had all the answers, but because I knew what it felt like to have none.
+
+Being a patient advocate means using my lived experience to help others navigate a healthcare system that often feels cold, complex, or inaccessible. It means standing in the gap—between patients and healthcare professionals, between fear and understanding, between surviving and thriving.
+
+It also means working with healthcare systems and pharmaceutical companies, not just critiquing them. Because in order to better understand diseases like FSGS and IgA Nephropathy, we need research that reflects our communities. We need clinical trials designed with equity in mind. We need companies that listen to patient voices from the beginning—not as an afterthought.
+
+A real patient advocate doesn't just amplify stories—they help shape systems. They push for culturally relevant education, build bridges between science and lived experience, and foster trust in communities that have long been neglected.
+
+For me, advocacy is personal. It's a commitment to making sure that rare doesn't mean forgotten. Whether I'm mentoring a newly diagnosed patient, developing outreach materials, or collaborating on strategies for community education, I carry this mission with me: people matter.
+
+And when we treat people like they matter—when we educate, empower, and uplift—we don't just change individual outcomes. We shift entire systems. That's what being a patient advocate means to me.`,
+                color: "bg-gradient-to-br from-blue-500/20 to-blue-600/30",
               },
               {
                 title: "Community Workshops",
-                description:
-                  "Interactive sessions designed to empower communities on health equity, policy, and advocacy.",
                 icon: "👥",
+                description: `I lead dynamic, community-rooted workshops that meet people where they are—virtually and in person. Through The Jentosy Project, We In The World, and Chromatic Black, I've facilitated sessions in Atlanta, Washington D.C., and New York City, connecting with communities across health, housing, and justice spaces. These workshops aren't just informational—they're transformational.
+
+I've worked with organizations like STRIVE to support fatherhood and reentry programs, and with Housing Works to lead life-coaching and wellness sessions. My workshops explore the complexities of kidney health, rare diseases like FSGS and IgA Nephropathy, and the everyday challenges people face in accessing quality care. Each session is built to foster trust, spark real dialogue, and provide practical tools for change.
+
+Workshops have the power to unlock community leadership, deepen understanding, and help people imagine new possibilities for wellness and connection. They create space for healing, learning, and mobilizing around solutions that reflect people's lived realities.`,
+                color: "bg-gradient-to-br from-purple-500/20 to-purple-600/30",
               },
               {
                 title: "Public Speaking",
-                description:
-                  "Engaging talks and keynotes focused on personal experiences, resilience, and transformative justice.",
                 icon: "🎤",
+                description: `Public speaking is where I turn lived experience into purpose-driven storytelling. I speak with clarity and compassion about resilience, identity, and the path from patient to advocate. As someone who's faced the complexities of a rare kidney disease diagnosis firsthand, I understand how vital it is to share honest, human stories that move people to think—and act—differently.
+
+I've given talks and keynotes for healthcare institutions, advocacy groups, universities, and national nonprofits. Whether the focus is on navigating rare conditions like FSGS and IgA Nephropathy, building trust in care settings, or empowering communities to advocate for themselves, I bring a voice rooted in both personal experience and professional practice.
+
+My goal is to inform, inspire, and ignite connection. I help audiences see the person behind the diagnosis, the family behind the policy, and the community behind the data. Speaking is not just about delivering information—it's about opening hearts and minds to new ways of understanding and engaging with the world around us.`,
+                color: "bg-gradient-to-br from-teal-500/20 to-teal-600/30",
               },
-            ].map((service, index) => (
-              <div
-                key={service.title}
-                ref={(el) => {
-                  cardsRef.current[index] = el;
-                }}
-                className="bg-white/10 backdrop-blur-sm rounded-xl p-6 sm:p-8 hover:bg-white/20 transition-colors transform hover:-translate-y-2 duration-300"
+            ].map((section, index) => (
+              <motion.div
+                key={section.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                className={`${section.color} backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-white/10 shadow-xl`}
               >
-                <div className="text-3xl sm:text-4xl mb-4 sm:mb-6">
-                  {service.icon}
+                <div className="flex items-center gap-4 mb-6">
+                  <span className="text-4xl">{section.icon}</span>
+                  <h3 className="text-3xl md:text-4xl font-cinzel font-light text-white">
+                    {section.title}
+                  </h3>
                 </div>
-                <h3 className="text-lg sm:text-xl uppercase tracking-wide mb-3 sm:mb-4 font-light">
-                  {service.title}
-                </h3>
-                <p className="mb-4 sm:mb-6 text-sm sm:text-base text-white/90">
-                  {service.description}
-                </p>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-white text-[#2D6FAB] hover:bg-white/90 px-4 sm:px-6 py-2 rounded-md transition-colors text-sm sm:text-base w-full sm:w-auto"
-                >
-                  Learn More
-                </motion.button>
-              </div>
+                <div className="text-white text-lg sm:text-xl leading-relaxed space-y-6">
+                  {section.description.split("\n").map((paragraph, idx) => (
+                    <p key={idx} className="mb-6 last:mb-0 font-light">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -699,7 +727,7 @@ const HomePage = () => {
                 Clinical Social Interviewer & Patient Advocate
               </div>
               <div className="flex flex-col sm:flex-row justify-center items-center gap-2 text-sm text-gray-700 mb-2">
-                <span>347-209-5482</span>
+                <span>347-290-3482</span>
                 <span className="hidden sm:inline">|</span>
                 <span>robsanchez124@gmail.com</span>
                 <span className="hidden sm:inline">|</span>
@@ -786,7 +814,7 @@ const HomePage = () => {
                     PRINCIPLE LEAD, THE JENTOSY PROJECT
                   </span>
                   <br />
-                  <span className="italic text-gray-700">Gallery/Remote</span>
+                  <span className="italic text-gray-700">Kidney Forward</span>
                 </div>
                 <div className="text-sm text-gray-600 sm:text-right mt-2 sm:mt-0">
                   Remote, United States
@@ -992,7 +1020,7 @@ const HomePage = () => {
             </div>
             <div className="mb-4">
               <div className="font-semibold">
-                CLINICAL SOCIAL WORK PRACTICES IN MSW COURSEWORK
+                CLINICAL SOCIAL WORK PRACTICES IN MSW COURSEWORK (MSW Pending)
               </div>
               <div className="italic text-gray-700">
                 The Silberman School of Social Work
@@ -1031,8 +1059,8 @@ const HomePage = () => {
             <button
               onClick={() => {
                 const link = document.createElement("a");
-                link.href = "/documents/resume/SanchezRobertRES2025.docx";
-                link.download = "SanchezRobertRES2025.docx";
+                link.href = "/documents/resume/Robert_A_Sanchez_Resume.docx";
+                link.download = "Robert_A_Sanchez_Resume.docx";
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
@@ -1057,8 +1085,8 @@ const HomePage = () => {
             <button
               onClick={() => {
                 const link = document.createElement("a");
-                link.href = "/documents/resume/SanchezRobertRES2025.pdf";
-                link.download = "SanchezRobertRES2025.pdf";
+                link.href = "/documents/resume/Robert_A_Sanchez_Resume.pdf";
+                link.download = "Robert_A_Sanchez_Resume.pdf";
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
@@ -1292,7 +1320,7 @@ const HomePage = () => {
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.196-4.354.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.2-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                   </svg>
                 </a>
               </div>

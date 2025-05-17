@@ -12,27 +12,51 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Dr. Emily Chen",
-    role: "Medical Director",
-    organization: "Horizon Medical Center",
+    name: "Maria Rodriguez",
+    role: "Patient",
+    organization: "Bronx Community",
     content:
-      "Robert's dedication to health equity and patient advocacy has transformed our approach to community engagement. His innovative strategies have been instrumental in increasing living donor awareness and improving patient outcomes.",
+      "When I was diagnosed with kidney disease, I felt lost and alone. Robert's patient advocacy program at Einstein helped me understand my condition and navigate the healthcare system. His bilingual support and cultural understanding made all the difference in my journey to finding a living donor.",
   },
   {
     id: 2,
-    name: "Carlos Mendez",
-    role: "Community Health Coordinator",
-    organization: "Unity Health Network",
+    name: "James Wilson",
+    role: "Patient",
+    organization: "Harlem Community",
     content:
-      "Working with Robert has been transformative for our community. His cultural humility and deep understanding of healthcare disparities have helped us reach and serve more patients effectively, particularly in underserved neighborhoods.",
+      "The workshops Robert led at Mount Sinai were life-changing. He helped me understand my FSGS diagnosis and connected me with other patients who shared similar experiences. His approach to patient education is both informative and empowering.",
   },
   {
     id: 3,
-    name: "Dr. Lisa Thompson",
-    role: "Research Director",
-    organization: "Global Health Institute",
+    name: "Dr. Sarah Johnson",
+    role: "Nephrologist",
+    organization: "Bronx Medical Center",
     content:
-      "Robert's leadership in the health advocacy community has been invaluable. His innovative approaches to patient education and support have made a real difference in countless lives, and his commitment to health equity is truly inspiring.",
+      "Robert's work in patient advocacy has transformed how we approach kidney disease education in our community. His ability to bridge the gap between medical professionals and patients has significantly improved our patient outcomes and engagement rates.",
+  },
+  {
+    id: 4,
+    name: "Aisha Thompson",
+    role: "Patient",
+    organization: "Bronx Community",
+    content:
+      "As someone living with IgA Nephropathy, I was struggling to find resources that spoke to my experience. Robert's advocacy work helped me access the right care and support. His dedication to serving our community is truly remarkable.",
+  },
+  {
+    id: 5,
+    name: "Dr. Michael Chen",
+    role: "Transplant Coordinator",
+    organization: "Harlem Hospital",
+    content:
+      "Robert's innovative approach to increasing living donor awareness in our community has been invaluable. His work with The Jentosy Project has helped us reach more potential donors and improve transplant outcomes for our patients.",
+  },
+  {
+    id: 6,
+    name: "Carlos Mendez",
+    role: "Patient",
+    organization: "Harlem Community",
+    content:
+      "The support groups Robert facilitates have been a lifeline for me and my family. His understanding of both the medical and social aspects of kidney disease has helped us navigate this journey with more confidence and hope.",
   },
 ];
 
@@ -155,18 +179,6 @@ const Testimonials = () => {
               </svg>
             </button>
           </div>
-        </div>
-
-        {/* Call to Action */}
-        <div className="mt-16 text-center">
-          <h3 className="text-2xl font-semibold mb-4">Share Your Story</h3>
-          <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Have you been impacted by our work? We'd love to hear your story and
-            potentially feature it here.
-          </p>
-          <button className="bg-[#2D6FAB] text-white px-8 py-3 rounded-lg hover:bg-[#1e4e7a] transition-colors">
-            Share Your Experience
-          </button>
         </div>
       </div>
     </section>
