@@ -3,26 +3,63 @@ import { motion, AnimatePresence } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import Testimonials from "./Testimonials";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Carousel images (all .webp except logo/favicon and rob-blue.webp)
+// Carousel images with titles
 const aboutCarouselImages = [
-  "robert-sanchez.webp",
-  "workshoping.webp",
-  "virtual-event.webp",
-  "speaking.webp",
-  "profeel.webp",
-  "presenting.webp",
-  "meet-your-speaker.webp",
-  "kidneytalk.webp",
-  "keeping-me-healthy.webp",
-  "jentosy-blanket.webp",
-  "jen-keller.webp",
-  "chw.webp",
-  "attending-nephcure.webp",
-  "action.webp",
+  {
+    src: "robert-sanchez.webp",
+    title: "Robert Sanchez - Health Equity Advocate",
+  },
+  {
+    src: "workshoping.webp",
+    title: "Leading Health Equity Workshop",
+  },
+  {
+    src: "virtual-event.webp",
+    title: "Virtual Health Education Event",
+  },
+  {
+    src: "speaking.webp",
+    title: "Public Speaking Engagement",
+  },
+  {
+    src: "profeel.webp",
+    title: "Professional Profile",
+  },
+  {
+    src: "presenting.webp",
+    title: "Presenting at Health Conference",
+  },
+  {
+    src: "meet-your-speaker.webp",
+    title: "Meet Your Speaker",
+  },
+  {
+    src: "kidneytalk.webp",
+    title: "Kidney Health Discussion",
+  },
+  {
+    src: "keeping-me-healthy.webp",
+    title: "Health and Wellness Focus",
+  },
+  {
+    src: "jentosy-blanket.webp",
+    title: "The Jentosy Project Initiative",
+  },
+  {
+    src: "jen-keller.webp",
+    title: "Collaboration with Jen Keller",
+  },
+  {
+    src: "chw.webp",
+    title: "Community Health Worker Training",
+  },
+  {
+    src: "attending-nephcure.webp",
+    title: "NephCure Event Participation",
+  },
 ];
 
 const HomePage = () => {
@@ -394,8 +431,9 @@ const HomePage = () => {
           >
             <div className="relative w-full max-w-xl h-80 sm:h-96 md:h-[32rem] overflow-hidden rounded-2xl sm:rounded-3xl shadow-xl sm:shadow-2xl bg-[#E9E9ED] flex items-center justify-center">
               <img
-                src={`/${aboutCarouselImages[carouselIndex]}`}
-                alt="About carousel"
+                src={`/${aboutCarouselImages[carouselIndex].src}`}
+                alt={aboutCarouselImages[carouselIndex].title}
+                title={aboutCarouselImages[carouselIndex].title}
                 className="about-carousel-image w-full h-full object-contain rounded-2xl sm:rounded-3xl transition-opacity duration-700 z-10"
                 style={{
                   boxShadow: "0 8px 32px 0 rgba(45, 111, 171, 0.25)",
@@ -403,6 +441,11 @@ const HomePage = () => {
                   padding: "1rem",
                 }}
               />
+              <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-4 text-center z-20">
+                <h3 className="text-lg sm:text-xl font-light">
+                  {aboutCarouselImages[carouselIndex].title}
+                </h3>
+              </div>
               {/* Carousel controls */}
               <button
                 onClick={prevCarousel}
@@ -686,7 +729,7 @@ My goal is to inform, inspire, and ignite connection. I help audiences see the p
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
-                className={`${section.color} backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-white/10 shadow-xl`}
+                className={`${section.color} backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.3),0_10px_20px_rgba(0,0,0,0.2),0_0_0_1px_rgba(255,255,255,0.1)] hover:shadow-[0_25px_60px_rgba(0,0,0,0.4),0_15px_25px_rgba(0,0,0,0.3),0_0_0_1px_rgba(255,255,255,0.15)] hover:-translate-y-1 transition-all duration-300`}
               >
                 <div className="flex items-center gap-4 mb-6">
                   <span className="text-4xl">{section.icon}</span>
@@ -706,9 +749,6 @@ My goal is to inform, inspire, and ignite connection. I help audiences see the p
           </div>
         </div>
       </section>
-
-      {/* Testimonials Section */}
-      <Testimonials />
 
       {/* Resume Highlight Section */}
       <section id="resume" className="bg-[#E9E9ED] py-16 sm:py-24 px-2 sm:px-4">
