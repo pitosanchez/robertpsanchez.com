@@ -795,7 +795,7 @@ My goal is to inform, inspire, and ignite connection. I help audiences see the p
                 Clinical Social Interviewer & Patient Advocate
               </div>
               <div className="flex flex-col sm:flex-row justify-center items-center gap-2 text-sm text-gray-700 mb-2">
-                <span>347-290-3482</span>
+                <span>Will provide phone-number upon request</span>
                 <span className="hidden sm:inline">|</span>
                 <span>robertp.sanchez@outlook.com</span>
                 <span className="hidden sm:inline">|</span>
@@ -818,7 +818,6 @@ My goal is to inform, inspire, and ignite connection. I help audiences see the p
                 <li>Cross-Functional Collaboration</li>
                 <li>KPI Development & Data Analysis</li>
                 <li>Collaborative mindset</li>
-                <li>Meeting facilitation</li>
                 <li>Policy Improvements</li>
               </ul>
               <ul className="list-disc list-inside space-y-1">
@@ -828,7 +827,6 @@ My goal is to inform, inspire, and ignite connection. I help audiences see the p
                 <li>Operational management</li>
                 <li>Policy development</li>
                 <li>Outreach strategies</li>
-                <li>Teamwork</li>
               </ul>
             </div>
             <div className="font-bold text-[#2D6FAB] text-lg mt-8 mb-2">
