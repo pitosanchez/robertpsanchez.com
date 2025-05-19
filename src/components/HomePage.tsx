@@ -46,7 +46,7 @@ const aboutCarouselImages = [
   },
   {
     src: "jen-keller.webp",
-    title: "Collaboration with Jen Keller",
+    title: "My Kidney Donor Jen Keller",
   },
   {
     src: "chw.webp",
