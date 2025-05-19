@@ -254,7 +254,7 @@ const HomePage = () => {
   const validateEmail = (email: string) =>
     /^[\w.-]+@([\w-]+\.)+[\w-]{2,4}$/.test(email);
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name || !form.email || !form.subject || !form.message) {
       setFormError("All fields are required.");
@@ -264,10 +264,26 @@ const HomePage = () => {
       setFormError("Please enter a valid email address.");
       return;
     }
-    setFormSuccess(true);
-    setForm({ name: "", email: "", subject: "", message: "" });
-    setFormError(null);
-    // TODO: Integrate with backend/email service
+    const formData = new FormData(e.target as HTMLFormElement);
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    if (!response.ok) {
+      setFormError("Failed to send message. Please try again.");
+      return;
+    }
+
+    const data = await response.json();
+    if (data.success) {
+      setFormSuccess(true);
+      setForm({ name: "", email: "", subject: "", message: "" });
+      setFormError(null);
+    } else {
+      setFormError("Failed to send message. Please try again.");
+    }
   };
 
   return (
