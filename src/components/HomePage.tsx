@@ -266,6 +266,8 @@ const HomePage = () => {
     }
     const formData = new FormData(e.target as HTMLFormElement);
 
+    formData.append("access_key", "237ca06d-386d-455e-a2cc-c8e192dd415f");
+
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       body: formData,
