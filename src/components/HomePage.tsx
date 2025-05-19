@@ -848,7 +848,7 @@ My goal is to inform, inspire, and ignite connection. I help audiences see the p
                 <div className="text-sm text-gray-600 sm:text-right mt-2 sm:mt-0">
                   Bronx, NY
                   <br />
-                  October 2020 - Present
+                  October 2024 - Present
                 </div>
               </div>
               <ul className="list-disc list-inside text-gray-700 ml-4 mt-2 space-y-1">
@@ -921,13 +921,13 @@ My goal is to inform, inspire, and ignite connection. I help audiences see the p
                   </span>
                   <br />
                   <span className="italic text-gray-700">
-                    PCORI PRIMED Clinical Research Network
+                    PCORI Clinical Research Network
                   </span>
                 </div>
                 <div className="text-sm text-gray-600 sm:text-right mt-2 sm:mt-0">
                   United States
                   <br />
-                  November 2021 - Present
+                  January 2025 - Present
                 </div>
               </div>
               <ul className="list-disc list-inside text-gray-700 ml-4 mt-2 space-y-1">
@@ -963,7 +963,7 @@ My goal is to inform, inspire, and ignite connection. I help audiences see the p
                 <div className="text-sm text-gray-600 sm:text-right mt-2 sm:mt-0">
                   New York, NY
                   <br />
-                  October 2018 - Present
+                  January 2025 - Present
                 </div>
               </div>
               <ul className="list-disc list-inside text-gray-700 ml-4 mt-2 space-y-1">
@@ -1003,7 +1003,7 @@ My goal is to inform, inspire, and ignite connection. I help audiences see the p
                 <div className="text-sm text-gray-600 sm:text-right mt-2 sm:mt-0">
                   New York, NY
                   <br />
-                  January 2020 - October 2021
+                  January 2020 - October 2024
                 </div>
               </div>
               <ul className="list-disc list-inside text-gray-700 ml-4 mt-2 space-y-1">
