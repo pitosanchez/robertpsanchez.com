@@ -25,10 +25,6 @@ const aboutCarouselImages = [
     title: "Public Speaking Engagement",
   },
   {
-    src: "profeel.webp",
-    title: "Professional Profile",
-  },
-  {
     src: "presenting.webp",
     title: "Presenting at Health Conference",
   },
@@ -82,9 +78,7 @@ const HomePage = () => {
 
   // Add social media links
   const socialLinks = {
-    linkedin: "https://linkedin.com/in/your-profile",
-    twitter: "https://twitter.com/your-handle",
-    instagram: "https://instagram.com/your-handle",
+    linkedin: "https://www.linkedin.com/in/robsanchez124/",
   };
 
   // Add Google Analytics
@@ -240,7 +234,6 @@ const HomePage = () => {
     { id: "about", label: "About" },
     { id: "mission", label: "Mission" },
     { id: "resume", label: "Resume" },
-    { id: "advocacy", label: "Interest" },
     { id: "contact", label: "Contact" },
   ];
 
@@ -312,12 +305,12 @@ const HomePage = () => {
                 className={`h-16 w-16 sm:h-20 sm:w-20 transition-all duration-300 ${
                   !isScrolled
                     ? "drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] brightness-110 contrast-110"
-                    : "drop-shadow-[0_0_12px_rgba(255,255,255,0.6)] hover:drop-shadow-[0_0_16px_rgba(255,255,255,0.8)]"
+                    : "drop-shadow-[0_0_15px_rgba(255,255,255,0.9)] brightness-125 contrast-125 hover:drop-shadow-[0_0_20px_rgba(255,255,255,1)]"
                 }`}
                 style={{
                   filter: !isScrolled
                     ? "brightness(1.2) contrast(1.2)"
-                    : "brightness(1.1) contrast(1.1)",
+                    : "brightness(1.4) contrast(1.4)",
                   transform: "scale(1.05)",
                 }}
               />
@@ -522,26 +515,35 @@ const HomePage = () => {
               Mission-Driven Kidney Health Advocate
             </p>
             <p className="mb-7">
-              I'm driven by a singular mission: to expand living kidney donation
-              and amplify the voices of underserved communities affected by rare
-              kidney diseases like FSGS and IgAN. As Co-Founder of The Jentosy
-              Project at Kidney Forward, I've spearheaded a nationwide campaign
-              that normalizes conversations about living donation—developing
-              culturally tailored outreach strategies, coordinating
-              storytelling-focused events, and building partnerships with
-              transplant centers, community leaders, and advocacy groups to
-              measurably increase donor registrations in Black and Brown
-              neighborhoods.
+              I'm dedicated to a singular purpose: increasing living kidney
+              donations and amplifying the voices of underserved communities
+              deeply affected by rare kidney diseases like FSGS and IgA
+              Nephropathy. As Co-Founder of The Jentosy Project at Kidney
+              Forward, I've led a national movement designed to normalize
+              conversations around living donation. By creating culturally
+              responsive outreach initiatives, coordinating impactful
+              storytelling events, and fostering strategic partnerships with
+              transplant centers, community leaders, and advocacy organizations,
+              we've significantly raised donor registrations in underserved
+              neighborhoods nationwide.
             </p>
             <p className="mb-7">
               In my current role at Albert Einstein Medical College, I guide
-              transplant candidates through every phase of evaluation—bringing
-              together multidisciplinary teams, addressing social determinants
-              of health, and designing post-transplant support workshops that
-              boost engagement and improve outcomes. I translate frontline
-              insights into concise "field reports" that inform program
-              adjustments and policy recommendations, ensuring that patient
-              needs remain at the center of institutional decision-making.
+              transplant candidates through each stage of their journey—from
+              initial evaluation to post-transplant support. My approach
+              emphasizes multidisciplinary collaboration, comprehensive
+              attention to social determinants of health, and personalized
+              patient workshops designed to improve long-term engagement and
+              health outcomes. By consistently translating frontline experiences
+              into actionable "field reports," I help institutions refine
+              programs and policies, ensuring patient needs remain central to
+              every decision.
+            </p>
+            <p className="mb-7">
+              My approach to advocacy is built on four key pillars that guide
+              every initiative and partnership I undertake. These principles
+              form the foundation of my work in healthcare equity and community
+              engagement:
             </p>
             {/* Advocacy Cards Grid */}
             <div className="my-10 grid grid-cols-1 sm:grid-cols-2 gap-8">
@@ -648,22 +650,30 @@ const HomePage = () => {
             </div>
             {/* End Advocacy Cards Grid */}
             <p className="mb-7">
-              Earlier in my career, I co-founded Rehabilitation Through the Arts
-              (RTA)—the theater program that inspired Sing Sing—where I learned
-              how creative collaboration can dismantle barriers and spark
-              transformation. That experience in cultural humility and
-              resilience now underpins every advocacy campaign I lead.
+              My advocacy journey began with co-founding Rehabilitation Through
+              the Arts (RTA), a transformative theater program that inspired the
+              acclaimed film "Sing Sing." This early experience instilled in me
+              a deep understanding of how creative collaboration, cultural
+              humility, and resilience can dismantle barriers and spark
+              meaningful change—principles I continue to apply to every
+              initiative I undertake.
             </p>
             <p className="mb-0">
-              With a Bachelor's in Behavioral Science, an M.P.S. in Professional
-              Studies, fluency in English and Spanish, and seven-plus years of
-              grassroots and clinical advocacy, I'm prepared to drive
-              patient-centered outreach, foster strategic community
-              partnerships, and elevate living-donor dialogue on a national
-              scale. If you're looking for a Community Advocate who combines
-              clinical rigor with creative vision—and who's deeply committed to
-              increasing kidney-donor rates in communities that need it most—I'd
-              welcome the opportunity to make that impact together.
+              With a Bachelor's degree in Behavioral Science, a Master's in
+              Professional Studies, bilingual fluency in English and Spanish,
+              and over two decades of experience in grassroots and clinical
+              advocacy, I'm uniquely positioned to lead patient-centered
+              outreach, cultivate impactful community partnerships, and elevate
+              the dialogue surrounding living kidney donation on a national
+              scale. My work intentionally engages communities directly—through
+              churches, barbershops, local gatherings, sporting events, and even
+              neighborhood nightspots—to ensure conversations about kidney
+              health happen where people feel most comfortable and receptive. If
+              you're seeking a dedicated Community Advocate who combines
+              clinical expertise with a visionary approach—committed to making a
+              measurable impact on kidney donor rates in communities that need
+              it most—let's connect and drive this vital mission forward
+              together.
             </p>
           </div>
         </div>
@@ -787,7 +797,7 @@ My goal is to inform, inspire, and ignite connection. I help audiences see the p
               <div className="flex flex-col sm:flex-row justify-center items-center gap-2 text-sm text-gray-700 mb-2">
                 <span>347-290-3482</span>
                 <span className="hidden sm:inline">|</span>
-                <span>robsanchez124@gmail.com</span>
+                <span>robertp.sanchez@outlook.com</span>
                 <span className="hidden sm:inline">|</span>
                 <span>Bronx, NY 10462</span>
               </div>
@@ -1110,6 +1120,9 @@ My goal is to inform, inspire, and ignite connection. I help audiences see the p
             <div className="font-bold text-[#2D6FAB] text-lg mb-2">
               LANGUAGES
             </div>
+            <div className="mb-4">
+              <div>English & Spanish</div>
+            </div>
           </div>
 
           {/* Download Buttons - Centered */}
@@ -1167,38 +1180,6 @@ My goal is to inform, inspire, and ignite connection. I help audiences see the p
               Download Resume (PDF)
             </button>
           </div>
-        </div>
-      </section>
-
-      {/* Advocacy Section */}
-      <section
-        id="advocacy"
-        className="bg-[#91B8DC] py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 text-white relative overflow-hidden"
-      >
-        <div className="advocacy-bg absolute inset-0 bg-[#2D6FAB]/20" />
-        <div className="relative max-w-7xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="px-4 sm:px-6 md:px-8"
-          >
-            <h3 className="text-2xl sm:text-3xl md:text-5xl font-display font-light mb-4 sm:mb-6 md:mb-8">
-              Rehabilitation Through the Arts (RTA)
-            </h3>
-            <p className="text-sm sm:text-base md:text-lg max-w-3xl mx-auto mb-6 sm:mb-8 md:mb-12">
-              My work with RTA and the inspiration behind the movie{" "}
-              <em>Sing Sing</em> underscores my commitment to transformative
-              justice through creativity.
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-[#2D6FAB] hover:bg-[#2D6FAB]/90 px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-md transition-colors text-sm sm:text-base md:text-lg w-full sm:w-auto max-w-xs mx-auto"
-            >
-              Learn More
-            </motion.button>
-          </motion.div>
         </div>
       </section>
 
@@ -1308,24 +1289,23 @@ My goal is to inform, inspire, and ignite connection. I help audiences see the p
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      <footer className="bg-gray-900 text-white py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div>
-              <h4 className="text-xl font-light mb-4">ROBERT A. SANCHEZ</h4>
-              <p className="text-gray-400">
-                Your Certified Guide To Advocating Health Equity & Social
-                Justice
+              <h4 className="text-lg font-light mb-2">ROBERT A. SANCHEZ</h4>
+              <p className="text-gray-400 text-sm">
+                Patient Advocate & Health Equity Advocate
               </p>
             </div>
             <div>
-              <h4 className="text-xl font-light mb-4">Quick Links</h4>
-              <ul className="space-y-2">
+              <h4 className="text-lg font-light mb-2">Quick Links</h4>
+              <ul className="space-y-1">
                 {navItems.map((item) => (
                   <li key={item.id}>
                     <button
                       onClick={() => scrollToSection(item.id)}
-                      className="text-gray-400 hover:text-white transition-colors"
+                      className="text-gray-400 hover:text-white transition-colors text-sm"
                     >
                       {item.label}
                     </button>
@@ -1333,58 +1313,32 @@ My goal is to inform, inspire, and ignite connection. I help audiences see the p
                 ))}
               </ul>
             </div>
-            <div>
-              <h4 className="text-xl font-light mb-4">Connect</h4>
-              <div className="flex space-x-4">
-                <a
-                  href={socialLinks.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
-                  aria-label="LinkedIn"
+            <div className="flex flex-col items-start">
+              <h4 className="text-lg font-light mb-2">Connect</h4>
+              <a
+                href={socialLinks.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors mb-2"
+                aria-label="LinkedIn"
+              >
+                <svg
+                  className="h-6 w-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                  <svg
-                    className="h-6 w-6"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                  </svg>
-                </a>
-                <a
-                  href={socialLinks.twitter}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
-                  aria-label="Twitter"
-                >
-                  <svg
-                    className="h-6 w-6"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
-                  </svg>
-                </a>
-                <a
-                  href={socialLinks.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
-                  aria-label="Instagram"
-                >
-                  <svg
-                    className="h-6 w-6"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.196-4.354.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.2-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                  </svg>
-                </a>
-              </div>
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+              </a>
+              <a
+                href="mailto:robertp.sanchez@outlook.com"
+                className="text-gray-400 hover:text-white transition-colors text-sm"
+              >
+                robertp.sanchez@outlook.com
+              </a>
             </div>
           </div>
-          <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400">
+          <div className="mt-6 pt-4 border-t border-gray-800 text-center text-gray-400 text-sm">
             <p>
               © {new Date().getFullYear()} Robert A. Sanchez. All rights
               reserved.
