@@ -420,7 +420,7 @@ const HomePage = () => {
               className="bg-[#2D6FAB] hover:bg-[#2D6FAB]/90 text-white px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-md text-sm sm:text-base md:text-lg transition-colors font-display w-full sm:w-auto"
               onClick={() => scrollToSection("about")}
             >
-              Start Your Journey
+              Learn More
             </motion.button>
           </motion.div>
         </div>
@@ -514,14 +514,17 @@ const HomePage = () => {
               I'm dedicated to a singular purpose: increasing living kidney
               donations and amplifying the voices of underserved communities
               deeply affected by rare kidney diseases like FSGS and IgA
-              Nephropathy. As Co-Founder of The Jentosy Project at Kidney
+              Nephropathy. As the director of The Jentosy Project at Kidney
               Forward, I've led a national movement designed to normalize
               conversations around living donation. By creating culturally
               responsive outreach initiatives, coordinating impactful
               storytelling events, and fostering strategic partnerships with
               transplant centers, community leaders, and advocacy organizations,
-              we've significantly raised donor registrations in underserved
-              neighborhoods nationwide.
+              we've significantly awareness in underserved communities
+              nationwide. Raising awareness of kidney health isn't enough. There
+              has to be a clear and constant presence of a patient advocate -
+              someone who is reachable and available a healthcare system that
+              can sometimes be scary and untrusting.
             </p>
             <p className="mb-7">
               In my current role at Albert Einstein Medical College, I guide
@@ -697,8 +700,10 @@ const HomePage = () => {
               Mission
             </h2>
             <p className="text-xl sm:text-2xl md:text-3xl max-w-3xl mx-auto leading-relaxed font-light">
-              Empowering individuals and communities through comprehensive
-              healthcare advocacy and education.
+              My mission is to empower kidney transplant patients by building
+              their social capital—the knowledge, connections, and confidence to
+              access resources they may not even know they have, with the
+              support of a present and committed advocate.
             </p>
           </motion.div>
 
