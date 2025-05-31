@@ -9,10 +9,6 @@ gsap.registerPlugin(ScrollTrigger);
 // Carousel images with titles
 const aboutCarouselImages = [
   {
-    src: "robert-sanchez.webp",
-    title: "Robert Sanchez - Health Equity Advocate",
-  },
-  {
     src: "workshoping.webp",
     title: "Leading Health Equity Workshop",
   },
@@ -399,7 +395,7 @@ const HomePage = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a2e]/80 to-transparent z-10" />
             {/* Main image, fully visible */}
             <img
-              src="/rob-blue.webp"
+              src="/robertBlueSuit.png"
               alt="Robert A. Sanchez"
               className="w-full h-full object-cover relative z-20"
               style={{ boxShadow: "0 8px 32px 0 rgba(45, 111, 171, 0.25)" }}
